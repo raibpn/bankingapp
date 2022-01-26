@@ -1,0 +1,18 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "firstName": "Bipin",
+      "lastName": "Rai",
+      "street": "83 Warner Street",
+      "city": "Boston"
+    },
+    {
+      "id": 1,
+      "firstName": "Dipin",
+      "lastName": "Rai",
+      "street": "83 Warner Street",
+      "city": "Boston"
+    }
+  ]
+}
