@@ -1,0 +1,8 @@
+export enum ActionType {
+    GET_CLIENT = "GET_CLIENT",
+    ADD_CLIENT = "ADD_CLIENT",
+    EDIT_CLIENT = "EDIT_CLIENT",
+    DELETE_CLIENT = "DELETE_CLIENT"
+
+
+}
