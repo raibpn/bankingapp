@@ -1,30 +1,69 @@
-import uuid from "uuid";
 import { Client } from "../../model/client";
-import { ActionType } from "./index";
+import { ActionType } from "../action-types";
 
-// export const GET_CLIENT = "GET_CLIENT"
-// export const ADD_CLIENT = "ADD_CLIENT"
-// export const EDIT_CLIENT = "EDIT_CLIENT"
-// export const DELETE_CLIENT = "DELETE_CLIENT"
+import { Dispatch } from "redux";
+import axios from "axios";
 
-interface GetClientAction {
-    type: ActionType.GET_CLIENT
-    client: Client[];
+
+//ACTION CREATOR
+
+// export const AddClient = ({
+//     id, firstName, lastName, streetAddress, city }: { id: number, firstName: string, lastName: string, streetAddress: string, city: string }) => {
+//   return (dispatch: Dispatch, getState: () => AppState) => {
+//     const {
+//     //   id = 1,
+//       firstName = "",
+//       lastName = "",
+//       streetAddress = "",
+//       city = ""
+//     } = clientData;
+//     const client = { description, note, amount, createdAt };
+
+//     const id = uuid();
+
+//     dispatch(
+//       addExpense({
+//         id,
+//         ...expense
+//       })
+//     );
+//   };
+// };
+
+// export const startRemoveExpense = id => {
+//   return (dispatch, getState) => {
+//     dispatch(removeExpense({ id }));
+//   };
+// };
+
+// export const startEditExpense = expense => {
+//   return (dispatch, getState) => {
+//     dispatch(editExpense(id, updates));
+//   };
+// };
+
+// export const getClients = (client :Client) => {
+//     return (dispatch : Dispatch) => {
+//         axios
+//             .get(`$(process.env.BANKING_APP_API)`)
+//             .then(response) => {
+//     console.log("response:", resp);
+//     Dispatch ({type: ActionType.GET_CLIENT, payload: resp.data
+//     });
+//  }
+   
+    
+// }
+
+
+export const getClients = (client: Client) => {
+    return (dispatch: Dispatch) => {
+        axios.get(`$(process.env.BANKING_APP_API)`)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err))
+        dispatch({
+            type: ActionType.GET_CLIENT,
+            payload: client
+        })
+    }
 }
-
-interface ADDClientAction {
-    type: ActionType.ADD_CLIENT
-    client: Client;
-}
-
-interface EditClientAction {
-    type: ActionType.EDIT_CLIENT
-    client: Client[];
-}
-
-interface DeleteClientAction {
-    type: ActionType.DELETE_CLIENT
-    id: number;
-}
-
-export type ClientActions = GetClientAction | ADDClientAction | EditClientAction | DeleteClientAction
