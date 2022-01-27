@@ -1,15 +1,16 @@
 import { Client } from "../../model/client";
+import { ActionType } from "../actions";
 import { ClientActions } from "../actions/client_action"
 
 const clientReducerDefaultState: Client[] = [];
 
 const clientReducer = (state = clientReducerDefaultState, action: ClientActions) : Client[] => {
   switch (action.type) {
-    case "ADD_CLIENT":
+    case ActionType.ADD_CLIENT:
       return [...state, action.client];
-    case "DELETE_CLIENT":
+    case ActionType.DELETE_CLIENT:
       return state.filter(({ id }) => id !== action.id);
-    case "EDIT_CLIENT":
+    case ActionType.EDIT_CLIENT:
       return state.map(client => {
         if (client.id === action.client.id) {
           return {
@@ -20,7 +21,7 @@ const clientReducer = (state = clientReducerDefaultState, action: ClientActions)
           return client;
         }
       });
-    case "GET_CLIENT":
+    case ActionType.GET_CLIENT:
       return action.client;
     default:
       return state;
