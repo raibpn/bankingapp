@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import './App.css';
 // import { Routes, Route } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
@@ -19,9 +19,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello Daju</h1>
-      <h1>{  }</h1>
-      <button onClick={() =>getClients}>GetClients</button>
     </div>
   );
 }

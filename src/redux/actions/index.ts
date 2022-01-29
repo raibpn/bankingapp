@@ -21,7 +21,7 @@ interface AddClientAction {
 
 interface EditClientAction {
     type: ActionType.EDIT_CLIENT
-    payload: Client[];
+    payload: Client;
 }
 
 interface DeleteClientAction {
