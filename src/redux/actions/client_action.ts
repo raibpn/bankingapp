@@ -4,7 +4,6 @@ import { ActionType } from "../action-types";
 import { Dispatch } from "redux";
 import axios from "axios";
 
-
 //ACTION CREATOR
 
 // export const AddClient = ({
@@ -55,10 +54,13 @@ import axios from "axios";
     
 // }
 
+// export default axios.create({
+//     baseURL: "http://localhost:5000/clients"
+// })
 
 export const getClients = (client: Client) => {
     return (dispatch: Dispatch) => {
-        axios.get(`$(process.env.BANKING_APP_API)`)
+        axios.get(`${process.env.REACT_APP_API}`)
             .then(res => console.log(res.data))
             .catch(err => console.log(err))
         dispatch({

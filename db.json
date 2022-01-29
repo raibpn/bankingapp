@@ -1,5 +1,5 @@
 {
-  "clients": [
+  "client": [
     {
       "id": 1,
       "firstName": "Bipin",
@@ -8,8 +8,8 @@
       "city": "Boston"
     },
     {
-      "id": 1,
-      "firstName": "Dipin",
+      "id": 2,
+      "firstName": "Jackson",
       "lastName": "Rai",
       "street": "83 Warner Street",
       "city": "Boston"
